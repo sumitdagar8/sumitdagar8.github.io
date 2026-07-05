@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBA Insights India</title>
+    <style>
+        /* CSS Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f6f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background-color: #112233;
+            color: #fff;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        header h1 {
+            font-size: 24px;
+            letter-spacing: 1px;
+        }
+
+        header h1 span {
+            background: #ff9933; /* Indian Saffron */
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-left: 5px;
+            color: #112233;
+            font-weight: bold;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        /* MAIN ARTICLE (FEATURED) SECTION */
+        .main-article {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            margin-bottom: 40px;
+            overflow: hidden;
+            border-left: 6px solid #138808; /* Indian Green */
+        }
+
+        .main-article-content {
+            padding: 40px;
+        }
+
+        .main-tag {
+            background-color: #ff9933;
+            color: white;
+            padding: 6px 12px;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 4px;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .main-article h2 {
+            font-size: 34px;
+            color: #112233;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .main-article p.summary {
+            font-size: 18px;
+            color: #444;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        /* Two Column Layout */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        .articles-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .article-card {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .tag {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            padding: 5px 10px;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+
+        .article-card h3 {
+            margin: 15px 0 10px 0;
+            font-size: 22px;
+            color: #112233;
+        }
+
+        .meta-info {
+            font-size: 13px;
+            color: #777;
+            margin-bottom: 15px;
+        }
+
+        .read-more-btn {
+            display: inline-block;
+            background-color: #112233;
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 14px;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+
+        .read-more-btn:hover {
+            background-color: #223344;
+        }
+
+        /* Sidebar */
+        sidebar {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            height: fit-content;
+        }
+
+        sidebar h4 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #112233;
+            border-bottom: 2px solid #ff9933;
+            padding-bottom: 5px;
+        }
+
+        sidebar ul {
+            list-style: none;
+        }
+
+        sidebar ul li {
+            margin-bottom: 10px;
+        }
+
+        sidebar ul li a {
+            text-decoration: none;
+            color: #444;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #112233;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            .main-article h2 {
+                font-size: 26px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>MBA<span>India</span></h1>
+    </header>
+
+    <div class="container">
+        
+        <!-- ⭐️ MAIN ARTICLE (INDIA SPECIAL) ⭐️ -->
+        <section class="main-article">
+            <div class="main-article-content">
+                <span class="main-tag">🇮🇳 Featured Case Study</span>
+                <h2>The Rise of India as a Global Business Hub: MBA Analysis</h2>
+                <div class="meta-info">Published: July 2026 | Written by: Sumit Dagar</div>
+                <p class="summary">Kaise India duniya ki sabse tezi se badhti hui economy ban raha hai? Is article me hum baat karenge Indian market dynamics aur digital revolution (UPI, Digital India) ke baare me.</p>
+                <p>Ek MBA student ke liye Indian market ko samajhna bohot zaroori hai. Is case study me bataya gaya hai ki kaise rural economy ab ek bada consumer market ban chuki hai, aur kaise Jio aur Tata jaise bade conglomerates ke sath-sath naye tech startups (Unicorns) India ki growth ko agay badha rahe hain. Hum baat karenge deep market penetration aur pricing strategies ki jo sirf India me kaam karti hain...</p>
+                <a href="#" class="read-more-btn" style="background-color: #138808;">Read Full Article</a>
+            </div>
+        </section>
+
+        <!-- Grid Layout -->
+        <div class="content-grid">
+            
+            <!-- Other Indian Articles -->
+            <main class="articles-container">
+                
+                <div class="article-card">
+                    <span class="tag">Marketing</span>
+                    <h3>The Success Strategy of Tata Group: Trust Branding</h3>
+                    <div class="meta-info">By: Indian Corporate Studies</div>
+                    <p>Namak se lekar software tak, Tata Group ne kaise "Trust" ko apna sabse bada marketing tool banaya? Padhein ye behtareen brand strategy case study.</p>
+                    <a href="#" class="read-more-btn">Read Case Study</a>
+                </div>
+
+                <div class="article-card">
+                    <span class="tag">Startups</span>
+                    <h3>The UPI Revolution: Changing Rural Management</h3>
+                    <div class="meta-info">By: FinTech Expert</div>
+                    <p>Kaise ek chhote se QR code ne India ke kirana stores aur pure retail management system ko hamesha ke liye badal diya. MBA operations analysis.</p>
+                    <a href="#" class="read-more-btn">Read Case Study</a>
+                </div>
+
+            </main>
+
+            <!-- Sidebar -->
+            <sidebar>
+                <h4>About Sumit's Blog</h4>
+                <p style="font-size: 14px; color: #666; margin-bottom: 15px;">Welcome! Is section me hum khaas taur par Indian Corporate Sector, Case Studies aur Indian Management Strategies ko cover karte hain.</p>
+                
+                <h4>Indian Market Topics</h4>
+                <ul>
+                    <li><a href="#">» Indian Startup Ecosystem</a></li>
+                    <li><a href="#">» Rural Marketing in India</a></li>
+                    <li><a href="#">» Digital India Initiatives</a></li>
+                    <li><a href="#">» Family Business Management</a></li>
+                </ul>
+            </sidebar>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 MBA India Insights | Created by Sumit Dagar. Powered by GitHub Pages.</p>
+    </footer>
+
+</body>
+</html>
