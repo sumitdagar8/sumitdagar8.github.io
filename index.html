@@ -6,9 +6,10 @@
     <title>भारत के प्रमुख पर्यटन स्थल - Knowledge Hub</title>
     <style>
         * {
-            box-sizing: border-box;
+            box-shadow: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -16,15 +17,29 @@
             color: #333;
             background-color: #f4f7f6;
         }
-        /* Developer Credit Styles */
-        .dev-credit {
+        /* Top Developer Profile Section */
+        .dev-header {
             background: linear-gradient(135deg, #ff9933, #ffffff, #138808);
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            border-bottom: 2px solid #ddd;
+            gap: 12px;
+        }
+        .dev-text {
             color: #000;
-            text-align: right;
-            padding: 10px 20px;
             font-size: 14px;
             font-weight: bold;
-            border-bottom: 2px solid #ddd;
+            text-align: right;
+        }
+        .dev-photo {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
         header {
             background-color: #0f2027;
@@ -128,9 +143,10 @@
 </head>
 <body>
 
-    <!-- Top Corner Developer Credit -->
-    <div class="dev-credit">
-        Website and Article Developed by Sumit Choudhary
+    <!-- Top Corner Developer Credit with Photo -->
+    <div class="dev-header">
+        <div class="dev-text">Website and Article Developed by Sumit Choudhary</div>
+        <img src="4496.jpg" alt="Sumit Choudhary" class="dev-photo">
     </div>
 
     <header>
@@ -142,7 +158,7 @@
         
         <div class="intro-section">
             <h2>भारत में पर्यटन (Tourism in India)</h2>
-            <p>भारत दुनिया के सबसे विविध और खूबसूरत पर्यटन देशों में से एक है। यहाँ उत्तर में हिमालय की बर्फ से ढकी चोटियाँ हैं, तो दक्षिण में खूबसूरत समुद्र तट। पश्चिम में थार का विशाल रेगिस्तान है, तो पूर्व में हरे-भरे चाय के बागान और घने जंगल। भारत का समृद्ध इतिहास, वास्तुकला, विभिन्न संस्कृतियाँ और स्वादिष्ट व्यंजन हर साल लाखों विदेशी और घरेलू पर्यटकों को अपनी ओर आकर्षित करते हैं। आइए जानते हैं भारत के कुछ सबसे प्रसिद्ध पर्यटन स्थलों के बारे में।</p>
+            <p>भारत दुनिया के सबसे विविध और खूबसूरत पर्यटन देशों में से एक है। यहाँ उत्तर में हिमालय की बर्फ से ढकी चोटियाँ हैं, तो दक्षिण में खूबसूरत समुद्र तट। पश्चिम में थार का विशाल रेगिस्तान है, तो पूर्व में हरे-भरे चाय के बागान और घने जंगल। भारत का समृद्ध इतिहास, वास्तुकला, विभिन्न संस्कृतियाँ और स्वादिष्ट व्यंजन हर साल लाखों विदेशी और घरेलू पर्यटकों को अपनी ओर आकर्षित करते हैं। आइए जानते हैं भारत के कुछ सबसे प्रसिद्ध पर्यटन स्थलों के बारे में.</p>
         </div>
 
         <div class="places-grid">
