@@ -1,171 +1,236 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>India Special Article</title>
+    <title>भारत के प्रमुख पर्यटन स्थल - Knowledge Hub</title>
     <style>
-        /* Base Styling - आपके मौजूदा CSS के अनुसार */
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
-
         body {
-            background-color: #f0fdf4; /* हल्का हरा/साफ़ बैकग्राउंड */
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #333;
             line-height: 1.6;
+            color: #333;
+            background-color: #f4f7f6;
         }
-
+        /* Developer Credit Styles */
+        .dev-credit {
+            background: linear-gradient(135deg, #ff9933, #ffffff, #138808);
+            color: #000;
+            text-align: right;
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: bold;
+            border-bottom: 2px solid #ddd;
+        }
         header {
-            background-color: #111827; /* डार्क थीम हेडर */
-            color: #ffffff;
-            padding: 20px;
+            background-color: #0f2027;
+            color: #fff;
+            padding: 60px 20px;
             text-align: center;
         }
-
         header h1 {
             font-size: 2.5rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
         }
-
-        /* Main Article Container */
-        .main-article {
-            max-width: 900px;
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.8;
+        }
+        .container {
+            max-width: 1100px;
             margin: 40px auto;
-            background: #ffffff;
+            padding: 0 20px;
+        }
+        .intro-section {
+            background: #fff;
             padding: 30px;
             border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 40px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
-
-        /* Banner Image Section */
-        .article-banner {
-            width: 100%;
-            height: 350px;
-            background: linear-gradient(135deg, #ff9933, #ffffff, #138808); /* तिरंगा थीम */
-            border-radius: 6px;
+        .intro-section h2 {
+            margin-bottom: 15px;
+            color: #0f2027;
+        }
+        .places-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+        .place-card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             display: flex;
-            align-items: center;
+            flex-direction: column;
+        }
+        @media (min-width: 768px) {
+            .place-card {
+                flex-direction: row;
+            }
+            .place-img {
+                width: 45%;
+                min-height: 300px;
+            }
+            .place-content {
+                width: 55%;
+            }
+        }
+        .place-img {
+            background-size: cover;
+            background-position: center;
+            min-height: 250px;
+        }
+        .place-content {
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
             justify-content: center;
-            margin-bottom: 30px;
-            color: #111827;
-            text-shadow: 1px 1px 3px rgba(255,255,255,0.8);
         }
-
-        .article-banner h2 {
-            font-size: 3rem;
-            font-weight: 800;
-            text-align: center;
+        .place-content h3 {
+            font-size: 1.8rem;
+            color: #0f2027;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #ff9933;
+            padding-bottom: 5px;
+            display: inline-block;
         }
-
-        /* Content Styling */
-        .article-meta {
-            font-size: 0.9rem;
-            color: #6b7280;
-            margin-bottom: 20px;
-            border-bottom: 1px solid #e5e7eb;
-            padding-bottom: 10px;
+        .place-location {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 15px;
+            font-weight: 500;
         }
-
-        .article-content p {
-            margin-bottom: 20px;
-            font-size: 1.1rem;
+        .place-content p {
+            margin-bottom: 15px;
             text-align: justify;
         }
-
-        .article-content h3 {
-            margin: 30px 0 15px 0;
-            color: #138808;
-            font-size: 1.5rem;
+        .key-attractions {
+            background: #f9f9f9;
+            padding: 12px;
+            border-left: 4px solid #138808;
+            font-size: 0.95rem;
         }
-
-        /* Grid for highlights */
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin: 30px 0;
-        }
-
-        .grid-card {
-            background: #f9fafb;
+        footer {
+            background-color: #0f2027;
+            color: #fff;
+            text-align: center;
             padding: 20px;
-            border-left: 4px solid #ff9933;
-            border-radius: 4px;
-        }
-
-        .grid-card h4 {
-            color: #ff9933;
-            margin-bottom: 10px;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .main-article {
-                margin: 20px;
-                padding: 20px;
-            }
-            .article-banner h2 {
-                font-size: 2rem;
-            }
+            margin-top: 60px;
         }
     </style>
 </head>
 <body>
 
+    <!-- Top Corner Developer Credit -->
+    <div class="dev-credit">
+        Website and Article Developed by Sumit Choudhary
+    </div>
+
     <header>
-        <h1>Knowledge Hub</h1>
+        <h1>अतुल्य भारत: प्रमुख पर्यटन स्थल</h1>
+        <p>भारत की संस्कृति, इतिहास और प्राकृतिक सुंदरता का एक अनूठा सफर</p>
     </header>
 
-    <main class="main-article">
-        <!-- आर्टिकल का मुख्य बैनर -->
-        <div class="article-banner">
-            <h2>INDIA</h2>
+    <div class="container">
+        
+        <div class="intro-section">
+            <h2>भारत में पर्यटन (Tourism in India)</h2>
+            <p>भारत दुनिया के सबसे विविध और खूबसूरत पर्यटन देशों में से एक है। यहाँ उत्तर में हिमालय की बर्फ से ढकी चोटियाँ हैं, तो दक्षिण में खूबसूरत समुद्र तट। पश्चिम में थार का विशाल रेगिस्तान है, तो पूर्व में हरे-भरे चाय के बागान और घने जंगल। भारत का समृद्ध इतिहास, वास्तुकला, विभिन्न संस्कृतियाँ और स्वादिष्ट व्यंजन हर साल लाखों विदेशी और घरेलू पर्यटकों को अपनी ओर आकर्षित करते हैं। आइए जानते हैं भारत के कुछ सबसे प्रसिद्ध पर्यटन स्थलों के बारे में।</p>
         </div>
 
-        <!-- मेटा जानकारी -->
-        <div class="article-meta">
-            <span><strong>Topic:</strong> National Heritage & Growth</span> | 
-            <span><strong>Published:</strong> July 2026</span>
-        </div>
+        <div class="places-grid">
 
-        <!-- मुख्य कंटेंट -->
-        <div class="article-content">
-            <p>
-                भारत, जिसे आधिकारिक तौर पर 'रिपब्लिक ऑफ इंडिया' कहा जाता है, अपनी विविधता, समृद्ध इतिहास और सांस्कृतिक धरोहर के लिए पूरी दुनिया में जाना जाता है। उत्तर में विशाल हिमालय से लेकर दक्षिण में हिंद महासागर तक फैला यह देश दुनिया का सबसे बड़ा लोकतंत्र है।
-            </p>
-
-            <h3>विविधता में एकता (Unity in Diversity)</h3>
-            <p>
-                भारत की सबसे बड़ी ताकत इसकी "विविधता में एकता" है। यहाँ सैकड़ों भाषाएँ, कई धर्म, और अनगिनत संस्कृतियाँ एक साथ मिलकर एक सुंदर ताने-बाने का निर्माण करती हैं। यहाँ के त्योहार जैसे दीवाली, ईद, होली और क्रिसमस देश की धर्मनिरपेक्ष आत्मा को दर्शाते हैं।
-            </p>
-
-            <!-- मुख्य विशेषताएँ दिखाने के लिए ग्रिड -->
-            <div class="info-grid">
-                <div class="grid-card">
-                    <h4>समृद्ध इतिहास</h4>
-                    <p>सिंधु घाटी सभ्यता से लेकर मौर्य, गुप्त और मुगल साम्राज्यों तक, भारत का इतिहास बेहद गौरवशाली रहा है।</p>
-                </div>
-                <div class="grid-card">
-                    <h4>आर्थिक और तकनीकी विकास</h4>
-                    <p>आज का भारत दुनिया की सबसे तेज़ी से बढ़ती अर्थव्यवस्थाओं में से एक है, जो आईटी और स्पेस टेक्नोलॉजी (ISRO) में नए कीर्तिमान स्थापित कर रहा है।</p>
-                </div>
-                <div class="grid-card">
-                    <h4>वैश्विक पहचान</h4>
-                    <p>योग, आयुर्वेद और हमारी मेहमाननवाज़ी ('अतिथि देवो भव:') ने वैश्विक स्तर पर भारत को एक विशेष स्थान दिलाया है।</p>
+            <!-- 1. Taj Mahal -->
+            <div class="place-card">
+                <div class="place-img" style="background-image: url('https://images.unsplash.com/photo-1564507592333-c60657eea523?q=80&w=800&auto=format&fit=crop');"></div>
+                <div class="place-content">
+                    <h3>1. ताज महल (Taj Mahal)</h3>
+                    <div class="place-location">स्थान: आगरा, उत्तर प्रदेश</div>
+                    <p>ताजमहल दुनिया के सात अजूबों में से एक है और इसे भारत की सबसे प्रसिद्ध ऐतिहासिक धरोहर माना जाता है। मुगल सम्राट शाहजहाँ ने अपनी पसंदीदा बेगम मुमताज़ महल की याद में इस सफेद संगमरमर के मकबरे का निर्माण करवाया था। यमुना नदी के तट पर स्थित यह इमारत अपनी बेहतरीन नक्काशी और वास्तुकला के लिए पूरी दुनिया में जानी जाती है। पूर्णिमा की रात को ताजमहल की खूबसूरती देखने लायक होती है।</p>
+                    <div class="key-attractions">
+                        <strong>मुख्य आकर्षण:</strong> मुख्य गुंबद, चार मीनारें, मुग़ल गार्डन और यमुना नदी का किनारा।
+                    </div>
                 </div>
             </div>
 
-            <h3>भविष्य की ओर बढ़ते कदम</h3>
-            <p>
-                एक युवा और ऊर्जावान आबादी के साथ, भारत डिजिटल क्रांति और सस्टेनेबल डेवलपमेंट (जैसे रिन्यूएबल एनर्जी) के क्षेत्र में तेज़ी से आगे बढ़ रहा है। अपनी प्राचीन विरासत को सहेजते हुए आधुनिकता को अपनाना ही भारत की असली पहचान है।
-            </p>
+            <!-- 2. Jaipur -->
+            <div class="place-card">
+                <div class="place-img" style="background-image: url('https://images.unsplash.com/photo-1477584322813-ac491aeb4e44?q=80&w=800&auto=format&fit=crop');"></div>
+                <div class="place-content">
+                    <h3>2. जयपुर - गुलाबी नगरी (Jaipur)</h3>
+                    <div class="place-location">स्थान: राजस्थान</div>
+                    <p>जयपुर को 'पिंक सिटी' या गुलाबी नगरी के नाम से जाना जाता है। यह शहर राजा-महाराजाओं के इतिहास, भव्य किलों और शानदार महलों का प्रतीक है। यहाँ की वास्तुकला और राजपूत संस्कृति पर्यटकों को मंत्रमुग्ध कर देती है। यहाँ का स्थानीय बाजार, रंग-बिरंगी पोशाकें और राजस्थानी खाना जैसे दाल-बाटी-चूरमा बेहद लोकप्रिय हैं।</p>
+                    <div class="key-attractions">
+                        <strong>मुख्य आकर्षण:</strong> हवा महल, आमेर का किला, सिटी पैलेस, जंतर मंतर और नाहरगढ़ किला।
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Kerala -->
+            <div class="place-card">
+                <div class="place-img" style="background-image: url('https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=800&auto=format&fit=crop');"></div>
+                <div class="place-content">
+                    <h3>3. केरल - ईश्वर का अपना देश (Kerala)</h3>
+                    <div class="place-location">स्थान: दक्षिण भारत</div>
+                    <p>केरल को अपनी प्राकृतिक सुंदरता के कारण 'God's Own Country' कहा जाता है। यह स्थान अपने शांत बैकवाटर्स (Backwaters), हाउसबोट की सवारी, नारियल के पेड़ों से घिरे समुद्र तटों और आयुर्वेदिक रिसॉर्ट्स के लिए प्रसिद्ध है। मुन्नार के हरे-भरे चाय के बागान और एलेप्पी के पानी के रास्ते प्रकृति प्रेमियों के लिए स्वर्ग के समान हैं।</p>
+                    <div class="key-attractions">
+                        <strong>मुख्य आकर्षण:</strong> एलेप्पी हाउसबोट, मुन्नार हिल स्टेशन, वायनाड और कोवलम बीच।
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Varanasi -->
+            <div class="place-card">
+                <div class="place-img" style="background-image: url('https://images.unsplash.com/photo-1561361531-9952a7879db5?q=80&w=800&auto=format&fit=crop');"></div>
+                <div class="place-content">
+                    <h3>4. वाराणसी - बनारस (Varanasi)</h3>
+                    <div class="place-location">स्थान: उत्तर प्रदेश</div>
+                    <p>वाराणसी दुनिया के सबसे पुराने जीवित शहरों में से एक है और इसे भारत की आध्यात्मिक राजधानी कहा जाता है। गंगा नदी के तट पर स्थित यह शहर अपने पवित्र घाटों, मंदिरों और संकरी गलियों के लिए जाना जाता है। शाम को दशाश्वमेध घाट पर होने वाली भव्य 'गंगा आरती' एक ऐसा अनुभव है जिसे जीवन में कभी भुलाया नहीं जा सकता। यहाँ लोग मोक्ष और आत्मिक शांति की तलाश में आते हैं।</p>
+                    <div class="key-attractions">
+                        <strong>मुख्य आकर्षण:</strong> काशी विश्वनाथ मंदिर, गंगा आरती, अस्सी घाट और सारनाथ (बौद्ध स्थल)।
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Goa -->
+            <div class="place-card">
+                <div class="place-img" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=800&auto=format&fit=crop');"></div>
+                <div class="place-content">
+                    <h3>5. गोवा - समुद्र तट और नाइटलाइफ़ (Goa)</h3>
+                    <div class="place-location">स्थान: पश्चिमी तट, भारत</div>
+                    <p>यदि आप मौज-मस्ती, समुद्र तट और बेहतरीन नाइटलाइफ़ के शौकीन हैं, तो गोवा आपके लिए सबसे बेहतरीन जगह है। यहाँ के खूबसूरत बीचेस, वाटर स्पोर्ट्स, पुराने पुर्तगाली चर्च और नाइट क्लब युवाओं के बीच काफी लोकप्रिय हैं। उत्तरी गोवा जहाँ अपनी पार्टियों के लिए जाना जाता है, वहीं दक्षिणी गोवा अपने शांत और साफ-सुथरे समुद्र तटों के लिए मशहूर है।</p>
+                    <div class="key-attractions">
+                        <strong>मुख्य आकर्षण:</strong> बागा बीच, कलंगुट बीच, डूडसागर झरना और बेसिलीका ऑफ बॉम जीसस चर्च।
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. Ladakh -->
+            <div class="place-card">
+                <div class="place-img" style="background-image: url('https://images.unsplash.com/photo-1581791534721-e599347317c1?q=80&w=800&auto=format&fit=crop');"></div>
+                <div class="place-content">
+                    <h3>6. लद्दाख - ठंडा रेगिस्तान (Ladakh)</h3>
+                    <div class="place-location">स्थान: जम्मू-कश्मीर और लद्दाख क्षेत्र</div>
+                    <p>लद्दाख अपनी ऊँची बर्फीली चोटियों, नीली झीलों और अद्भुत शांत वातावरण के लिए जाना जाता है। इसे 'दर्रों की भूमि' भी कहा जाता है। यहाँ की पैंगोंग झील (Pangong Lake) का पानी मौसम के साथ अपना रंग बदलता है, जो पर्यटकों के आकर्षण का मुख्य केंद्र है। एडवेंचर के शौकीन लोगों के लिए बाइक राइडिंग और ट्रेकिंग के लिए यह भारत की सबसे पसंदीदा जगह है।</p>
+                    <div class="key-attractions">
+                        <strong>मुख्य आकर्षण:</strong> पैंगोंग त्सो झील, नुब्रा घाटी, चुंबकीय पहाड़ी (Magnetic Hill) और लेह पैलेस।
+                    </div>
+                </div>
+            </div>
+
         </div>
-    </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Knowledge Hub. सभी अधिकार सुरक्षित हैं।</p>
+    </footer>
 
 </body>
 </html>
