@@ -3,270 +3,169 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MBA Insights India</title>
+    <title>India Special Article</title>
     <style>
-        /* CSS Styling */
+        /* Base Styling - आपके मौजूदा CSS के अनुसार */
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            background-color: #f4f6f9;
+            background-color: #f0fdf4; /* हल्का हरा/साफ़ बैकग्राउंड */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: #333;
             line-height: 1.6;
         }
 
-        /* Header */
         header {
-            background-color: #112233;
-            color: #fff;
-            padding: 20px 50px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
+            background-color: #111827; /* डार्क थीम हेडर */
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
         }
 
         header h1 {
-            font-size: 24px;
-            letter-spacing: 1px;
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
-        header h1 span {
-            background: #ff9933; /* Indian Saffron */
-            padding: 2px 8px;
-            border-radius: 4px;
-            margin-left: 5px;
-            color: #112233;
-            font-weight: bold;
-        }
-
-        /* Main Container */
-        .container {
-            max-width: 1100px;
-            margin: 30px auto;
-            padding: 0 20px;
-        }
-
-        /* MAIN ARTICLE (FEATURED) SECTION */
+        /* Main Article Container */
         .main-article {
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-            margin-bottom: 40px;
-            overflow: hidden;
-            border-left: 6px solid #138808; /* Indian Green */
+            max-width: 900px;
+            margin: 40px auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
         }
 
-        .main-article-content {
-            padding: 40px;
-        }
-
-        .main-tag {
-            background-color: #ff9933;
-            color: white;
-            padding: 6px 12px;
-            font-size: 12px;
-            font-weight: bold;
-            border-radius: 4px;
-            text-transform: uppercase;
-            display: inline-block;
-            margin-bottom: 15px;
-        }
-
-        .main-article h2 {
-            font-size: 34px;
-            color: #112233;
-            margin-bottom: 15px;
-            line-height: 1.3;
-        }
-
-        .main-article p.summary {
-            font-size: 18px;
-            color: #444;
-            margin-bottom: 20px;
-            font-weight: 500;
-        }
-
-        /* Two Column Layout */
-        .content-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 30px;
-        }
-
-        .articles-container {
+        /* Banner Image Section */
+        .article-banner {
+            width: 100%;
+            height: 350px;
+            background: linear-gradient(135deg, #ff9933, #ffffff, #138808); /* तिरंगा थीम */
+            border-radius: 6px;
             display: flex;
-            flex-direction: column;
-            gap: 30px;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+            color: #111827;
+            text-shadow: 1px 1px 3px rgba(255,255,255,0.8);
         }
 
-        .article-card {
-            background: white;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        .article-banner h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            text-align: center;
         }
 
-        .tag {
-            background-color: #e8f5e9;
-            color: #2e7d32;
-            padding: 5px 10px;
-            font-size: 12px;
-            font-weight: bold;
-            border-radius: 4px;
-            text-transform: uppercase;
+        /* Content Styling */
+        .article-meta {
+            font-size: 0.9rem;
+            color: #6b7280;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 10px;
         }
 
-        .article-card h3 {
-            margin: 15px 0 10px 0;
-            font-size: 22px;
-            color: #112233;
+        .article-content p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            text-align: justify;
         }
 
-        .meta-info {
-            font-size: 13px;
-            color: #777;
-            margin-bottom: 15px;
+        .article-content h3 {
+            margin: 30px 0 15px 0;
+            color: #138808;
+            font-size: 1.5rem;
         }
 
-        .read-more-btn {
-            display: inline-block;
-            background-color: #112233;
-            color: white;
-            text-decoration: none;
-            padding: 8px 16px;
-            border-radius: 4px;
-            font-size: 14px;
-            transition: 0.3s;
-            margin-top: 10px;
+        /* Grid for highlights */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
         }
 
-        .read-more-btn:hover {
-            background-color: #223344;
-        }
-
-        /* Sidebar */
-        sidebar {
-            background: white;
+        .grid-card {
+            background: #f9fafb;
             padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            height: fit-content;
+            border-left: 4px solid #ff9933;
+            border-radius: 4px;
         }
 
-        sidebar h4 {
-            font-size: 18px;
-            margin-bottom: 15px;
-            color: #112233;
-            border-bottom: 2px solid #ff9933;
-            padding-bottom: 5px;
-        }
-
-        sidebar ul {
-            list-style: none;
-        }
-
-        sidebar ul li {
+        .grid-card h4 {
+            color: #ff9933;
             margin-bottom: 10px;
         }
 
-        sidebar ul li a {
-            text-decoration: none;
-            color: #444;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #112233;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-            font-size: 14px;
-        }
-
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .content-grid {
-                grid-template-columns: 1fr;
+            .main-article {
+                margin: 20px;
+                padding: 20px;
             }
-            .main-article h2 {
-                font-size: 26px;
+            .article-banner h2 {
+                font-size: 2rem;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header -->
     <header>
-        <h1>MBA<span>India</span></h1>
+        <h1>Knowledge Hub</h1>
     </header>
 
-    <div class="container">
-        
-        <!-- ⭐️ MAIN ARTICLE (INDIA SPECIAL) ⭐️ -->
-        <section class="main-article">
-            <div class="main-article-content">
-                <span class="main-tag">🇮🇳 Featured Case Study</span>
-                <h2>The Rise of India as a Global Business Hub: MBA Analysis</h2>
-                <div class="meta-info">Published: July 2026 | Written by: Sumit Dagar</div>
-                <p class="summary">Kaise India duniya ki sabse tezi se badhti hui economy ban raha hai? Is article me hum baat karenge Indian market dynamics aur digital revolution (UPI, Digital India) ke baare me.</p>
-                <p>Ek MBA student ke liye Indian market ko samajhna bohot zaroori hai. Is case study me bataya gaya hai ki kaise rural economy ab ek bada consumer market ban chuki hai, aur kaise Jio aur Tata jaise bade conglomerates ke sath-sath naye tech startups (Unicorns) India ki growth ko agay badha rahe hain. Hum baat karenge deep market penetration aur pricing strategies ki jo sirf India me kaam karti hain...</p>
-                <a href="#" class="read-more-btn" style="background-color: #138808;">Read Full Article</a>
-            </div>
-        </section>
-
-        <!-- Grid Layout -->
-        <div class="content-grid">
-            
-            <!-- Other Indian Articles -->
-            <main class="articles-container">
-                
-                <div class="article-card">
-                    <span class="tag">Marketing</span>
-                    <h3>The Success Strategy of Tata Group: Trust Branding</h3>
-                    <div class="meta-info">By: Indian Corporate Studies</div>
-                    <p>Namak se lekar software tak, Tata Group ne kaise "Trust" ko apna sabse bada marketing tool banaya? Padhein ye behtareen brand strategy case study.</p>
-                    <a href="#" class="read-more-btn">Read Case Study</a>
-                </div>
-
-                <div class="article-card">
-                    <span class="tag">Startups</span>
-                    <h3>The UPI Revolution: Changing Rural Management</h3>
-                    <div class="meta-info">By: FinTech Expert</div>
-                    <p>Kaise ek chhote se QR code ne India ke kirana stores aur pure retail management system ko hamesha ke liye badal diya. MBA operations analysis.</p>
-                    <a href="#" class="read-more-btn">Read Case Study</a>
-                </div>
-
-            </main>
-
-            <!-- Sidebar -->
-            <sidebar>
-                <h4>About Sumit's Blog</h4>
-                <p style="font-size: 14px; color: #666; margin-bottom: 15px;">Welcome! Is section me hum khaas taur par Indian Corporate Sector, Case Studies aur Indian Management Strategies ko cover karte hain.</p>
-                
-                <h4>Indian Market Topics</h4>
-                <ul>
-                    <li><a href="#">» Indian Startup Ecosystem</a></li>
-                    <li><a href="#">» Rural Marketing in India</a></li>
-                    <li><a href="#">» Digital India Initiatives</a></li>
-                    <li><a href="#">» Family Business Management</a></li>
-                </ul>
-            </sidebar>
-
+    <main class="main-article">
+        <!-- आर्टिकल का मुख्य बैनर -->
+        <div class="article-banner">
+            <h2>INDIA</h2>
         </div>
-    </div>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 MBA India Insights | Created by Sumit Dagar. Powered by GitHub Pages.</p>
-    </footer>
+        <!-- मेटा जानकारी -->
+        <div class="article-meta">
+            <span><strong>Topic:</strong> National Heritage & Growth</span> | 
+            <span><strong>Published:</strong> July 2026</span>
+        </div>
+
+        <!-- मुख्य कंटेंट -->
+        <div class="article-content">
+            <p>
+                भारत, जिसे आधिकारिक तौर पर 'रिपब्लिक ऑफ इंडिया' कहा जाता है, अपनी विविधता, समृद्ध इतिहास और सांस्कृतिक धरोहर के लिए पूरी दुनिया में जाना जाता है। उत्तर में विशाल हिमालय से लेकर दक्षिण में हिंद महासागर तक फैला यह देश दुनिया का सबसे बड़ा लोकतंत्र है।
+            </p>
+
+            <h3>विविधता में एकता (Unity in Diversity)</h3>
+            <p>
+                भारत की सबसे बड़ी ताकत इसकी "विविधता में एकता" है। यहाँ सैकड़ों भाषाएँ, कई धर्म, और अनगिनत संस्कृतियाँ एक साथ मिलकर एक सुंदर ताने-बाने का निर्माण करती हैं। यहाँ के त्योहार जैसे दीवाली, ईद, होली और क्रिसमस देश की धर्मनिरपेक्ष आत्मा को दर्शाते हैं।
+            </p>
+
+            <!-- मुख्य विशेषताएँ दिखाने के लिए ग्रिड -->
+            <div class="info-grid">
+                <div class="grid-card">
+                    <h4>समृद्ध इतिहास</h4>
+                    <p>सिंधु घाटी सभ्यता से लेकर मौर्य, गुप्त और मुगल साम्राज्यों तक, भारत का इतिहास बेहद गौरवशाली रहा है।</p>
+                </div>
+                <div class="grid-card">
+                    <h4>आर्थिक और तकनीकी विकास</h4>
+                    <p>आज का भारत दुनिया की सबसे तेज़ी से बढ़ती अर्थव्यवस्थाओं में से एक है, जो आईटी और स्पेस टेक्नोलॉजी (ISRO) में नए कीर्तिमान स्थापित कर रहा है।</p>
+                </div>
+                <div class="grid-card">
+                    <h4>वैश्विक पहचान</h4>
+                    <p>योग, आयुर्वेद और हमारी मेहमाननवाज़ी ('अतिथि देवो भव:') ने वैश्विक स्तर पर भारत को एक विशेष स्थान दिलाया है।</p>
+                </div>
+            </div>
+
+            <h3>भविष्य की ओर बढ़ते कदम</h3>
+            <p>
+                एक युवा और ऊर्जावान आबादी के साथ, भारत डिजिटल क्रांति और सस्टेनेबल डेवलपमेंट (जैसे रिन्यूएबल एनर्जी) के क्षेत्र में तेज़ी से आगे बढ़ रहा है। अपनी प्राचीन विरासत को सहेजते हुए आधुनिकता को अपनाना ही भारत की असली पहचान है।
+            </p>
+        </div>
+    </main>
 
 </body>
 </html>
