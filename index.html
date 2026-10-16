@@ -1,253 +1,405 @@
+
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>भारत के प्रमुख पर्यटन स्थल - Knowledge Hub</title>
-    <style>
-        * {
-            box-shadow: border-box;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f4f7f6;
-        }
-        /* Top Developer Profile Section */
-        .dev-header {
-            background: linear-gradient(135deg, #ff9933, #ffffff, #138808);
-            padding: 12px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            border-bottom: 2px solid #ddd;
-            gap: 12px;
-        }
-        .dev-text {
-            color: #000;
-            font-size: 14px;
-            font-weight: bold;
-            text-align: right;
-        }
-        .dev-photo {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid #fff;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
-        header {
-            background-color: #0f2027;
-            color: #fff;
-            padding: 60px 20px;
-            text-align: center;
-        }
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            letter-spacing: 1px;
-        }
-        header p {
-            font-size: 1.1rem;
-            opacity: 0.8;
-        }
-        .container {
-            max-width: 1100px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-        .intro-section {
-            background: #fff;
-            padding: 30px;
-            border-radius: 8px;
-            margin-bottom: 40px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        }
-        .intro-section h2 {
-            margin-bottom: 15px;
-            color: #0f2027;
-        }
-        .places-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 40px;
-        }
-        .place-card {
-            background: #fff;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            display: flex;
-            flex-direction: column;
-        }
-        @media (min-width: 768px) {
-            .place-card {
-                flex-direction: row;
-            }
-            .place-img {
-                width: 45%;
-                min-height: 300px;
-            }
-            .place-content {
-                width: 55%;
-            }
-        }
-        .place-img {
-            background-size: cover;
-            background-position: center;
-            min-height: 250px;
-        }
-        .place-content {
-            padding: 30px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        .place-content h3 {
-            font-size: 1.8rem;
-            color: #0f2027;
-            margin-bottom: 10px;
-            border-bottom: 2px solid #ff9933;
-            padding-bottom: 5px;
-            display: inline-block;
-        }
-        .place-location {
-            font-style: italic;
-            color: #666;
-            margin-bottom: 15px;
-            font-weight: 500;
-        }
-        .place-content p {
-            margin-bottom: 15px;
-            text-align: justify;
-        }
-        .key-attractions {
-            background: #f9f9f9;
-            padding: 12px;
-            border-left: 4px solid #138808;
-            font-size: 0.95rem;
-        }
-        footer {
-            background-color: #0f2027;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-            margin-top: 60px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Sumit Dagar — an independent destination for market education, business insights and financial news resources.">
+<title>Sumit Dagar | Market Journal</title>
+
+<style>
+:root {
+  --navy: #101c2d;
+  --blue: #2864e8;
+  --paper: #f6f7f9;
+  --muted: #667085;
+  --line: #e3e7ed;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--paper);
+  color: var(--navy);
+}
+header {
+  padding: 22px 7%;
+  background: white;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.logo { font-size: 22px; font-weight: 800; letter-spacing: 1px; }
+.logo span { color: var(--blue); }
+nav { display: flex; flex-wrap: wrap; gap: 20px; }
+nav a { text-decoration: none; color: var(--navy); font-size: 13px; }
+nav a:hover { color: var(--blue); }
+.hero {
+  padding: 75px 7%;
+  color: white;
+  background: var(--navy);
+}
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #8fb0ff;
+  font-weight: bold;
+}
+.hero h1 {
+  font-size: clamp(38px, 6vw, 68px);
+  line-height: 1.08;
+  max-width: 750px;
+  margin: 20px 0;
+  letter-spacing: -2px;
+}
+.hero p { max-width: 600px; color: #d1d9e5; line-height: 1.8; }
+.hero a {
+  display: inline-block;
+  margin-top: 18px;
+  background: var(--blue);
+  padding: 14px 20px;
+  border-radius: 6px;
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+}
+main { max-width: 1250px; margin: auto; padding: 40px 25px; }
+.section-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 23px;
+}
+h2 { font-size: 27px; margin: 0; }
+.section-head p { color: var(--muted); font-size: 12px; }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 18px;
+}
+.card {
+  background: white;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+.card .number {
+  font-size: 30px;
+  color: var(--blue);
+  font-weight: bold;
+}
+.card h3 { font-size: 18px; line-height: 1.5; }
+.card p { font-size: 13px; line-height: 1.8; color: var(--muted); }
+.card a { color: var(--blue); font-size: 12px; font-weight: bold; }
+.label {
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 1.3px;
+  color: var(--blue);
+}
+.notice {
+  margin: 22px 0;
+  padding: 14px 16px;
+  border-left: 3px solid var(--blue);
+  background: white;
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.ai-section {
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 30px;
+  align-items: start;
+}
+.ai-info p { color: var(--muted); line-height: 1.8; font-size: 14px; }
+.chat {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 20px;
+}
+.chat-title { font-weight: bold; margin-bottom: 14px; }
+#messages {
+  min-height: 140px;
+  max-height: 280px;
+  overflow-y: auto;
+}
+.message {
+  padding: 12px;
+  margin: 9px 0;
+  font-size: 13px;
+  line-height: 1.7;
+  border-radius: 8px;
+  overflow-wrap: anywhere;
+}
+.bot { background: #edf2fa; }
+.user { background: #e0eaff; text-align: right; }
+form { display: flex; gap: 8px; margin-top: 15px; }
+input {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid #d6dce6;
+  border-radius: 7px;
+  padding: 12px;
+  font-size: 13px;
+}
+button {
+  border: 0;
+  border-radius: 7px;
+  background: var(--blue);
+  color: white;
+  padding: 12px 17px;
+  cursor: pointer;
+}
+button:hover { background: #174bc0; }
+.small { font-size: 10px; line-height: 1.7; color: var(--muted); }
+footer {
+  margin-top: 50px;
+  padding: 35px 7%;
+  background: var(--navy);
+  color: white;
+}
+footer p { color: #c5cfdd; font-size: 12px; line-height: 1.8; }
+footer a { color: #a9c2ff; }
+@media(max-width:700px) {
+  header { align-items: flex-start; flex-direction: column; }
+  .ai-section { grid-template-columns: 1fr; }
+  .hero { padding: 55px 7%; }
+  main { padding: 30px 18px; }
+}
+</style>
 </head>
+
 <body>
 
-    <!-- Top Corner Developer Credit with Photo -->
-    <!-- Top Corner Developer Credit with Photo -->
-    <div class="dev-header">
-        <div class="dev-text">Website and Article Developed by Sumit Choudhary</div>
-        <img src="4496.jpg" alt="Sumit Choudhary" class="dev-photo">
+<header>
+  <div class="logo">SUMIT <span>DAGAR</span></div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#insights">Market Insights</a>
+    <a href="#sources">News Sources</a>
+    <a href="#assistant">AI Assistant</a>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <div class="eyebrow">Independent Financial Journal</div>
+  <h1>Discover the forces shaping financial markets.</h1>
+  <p>
+    Explore market concepts, business developments, economic indicators
+    and financial knowledge through an independent learning platform.
+  </p>
+  <a href="#insights">Explore Insights &darr;</a>
+</section>
+
+<main>
+  <section id="insights">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Knowledge Centre</div>
+        <h2>Explore the Market</h2>
+      </div>
+      <p>Educational content · Independent platform</p>
     </div>
 
-    <header>
-        <h1>अतुल्य भारत: प्रमुख पर्यटन स्थल</h1>
-        <p>भारत की संस्कृति, इतिहास और प्राकृतिक सुंदरता का एक अनूठा सफर</p>
-    </header>
+    <div class="grid">
+      <article class="card">
+        <div class="number">01</div>
+        <div class="label">EQUITY</div>
+        <h3>Understanding Stock Markets</h3>
+        <p>
+          Learn about stock exchanges, market indices, share prices
+          and the factors that influence investor decisions.
+        </p>
+        <a href="https://www.nseindia.com/" target="_blank" rel="noopener noreferrer">
+          Official NSE Website ↗
+        </a>
+      </article>
 
-    <div class="container">
-        
-        <div class="intro-section">
-            <h2>भारत में पर्यटन (Tourism in India)</h2>
-            <p>भारत दुनिया के सबसे विविध और खूबसूरत पर्यटन देशों में से एक है। यहाँ उत्तर में हिमालय की बर्फ से ढकी चोटियाँ हैं, तो दक्षिण में खूबसूरत समुद्र तट। पश्चिम में थार का विशाल रेगिस्तान है, तो पूर्व में हरे-भरे चाय के बागान और घने जंगल। भारत का समृद्ध इतिहास, वास्तुकला, विभिन्न संस्कृतियाँ और स्वादिष्ट व्यंजन हर साल लाखों विदेशी और घरेलू पर्यटकों को अपनी ओर आकर्षित करते हैं। आइए जानते हैं भारत के कुछ सबसे प्रसिद्ध पर्यटन स्थलों के बारे में.</p>
-        </div>
+      <article class="card">
+        <div class="number">02</div>
+        <div class="label">ECONOMY</div>
+        <h3>Economic Indicators</h3>
+        <p>
+          Explore inflation, interest rates, GDP and monetary policy
+          to understand the wider economic environment.
+        </p>
+        <a href="https://www.rbi.org.in/" target="_blank" rel="noopener noreferrer">
+          Official RBI Website ↗
+        </a>
+      </article>
 
-        <div class="places-grid">
+      <article class="card">
+        <div class="number">03</div>
+        <div class="label">BUSINESS</div>
+        <h3>Company Performance</h3>
+        <p>
+          Understand revenue, profitability, balance sheets,
+          cash flow and the basics of financial statements.
+        </p>
+        <a href="https://www.bseindia.com/" target="_blank" rel="noopener noreferrer">
+          Official BSE Website ↗
+        </a>
+      </article>
 
-            <!-- 1. Taj Mahal -->
-            <div class="place-card">
-                <div class="place-img" style="background-image: url('https://images.unsplash.com/photo-1564507592333-c60657eea523?q=80&w=800&auto=format&fit=crop');"></div>
-                <div class="place-content">
-                    <h3>1. ताज महल (Taj Mahal)</h3>
-                    <div class="place-location">स्थान: आगरा, उत्तर प्रदेश</div>
-                    <p>ताजमहल दुनिया के सात अजूबों में से एक है और इसे भारत की सबसे प्रसिद्ध ऐतिहासिक धरोहर माना जाता है। मुगल सम्राट शाहजहाँ ने अपनी पसंदीदा बेगम मुमताज़ महल की याद में इस सफेद संगमरमर के मकबरे का निर्माण करवाया था। यमुना नदी के तट पर स्थित यह इमारत अपनी बेहतरीन नक्काशी और वास्तुकला के लिए पूरी दुनिया में जानी जाती है। पूर्णिमा की रात को ताजमहल की खूबसूरती देखने लायक होती है।</p>
-                    <div class="key-attractions">
-                        <strong>मुख्य आकर्षण:</strong> मुख्य गुंबद, चार मीनारें, मुग़ल गार्डन और यमुना नदी का किनारा।
-                    </div>
-                </div>
-            </div>
-
-            <!-- 2. Jaipur -->
-            <div class="place-card">
-                <div class="place-img" style="background-image: url('https://share.google/GkLnJ2JaCz5zmPbbE&auto=format&fit=crop');"></div>
-                <div class="place-content">
-                    <h3>2. जयपुर - गुलाबी नगरी (Jaipur)</h3>
-                    <div class="place-location">स्थान: राजस्थान</div>
-                    <p>जयपुर को 'पिंक सिटी' या गुलाबी नगरी के नाम से जाना जाता है। यह शहर राजा-महाराजाओं के इतिहास, भव्य किलों और शानदार महलों का प्रतीक है। यहाँ की वास्तुकला और राजपूत संस्कृति पर्यटकों को मंत्रमुग्ध कर देती है। यहाँ का स्थानीय बाजार, रंग-बिरंगी पोशाकें और राजस्थानी खाना जैसे दाल-बाटी-चूरमा बेहद लोकप्रिय हैं।</p>
-                    <div class="key-attractions">
-                        <strong>मुख्य आकर्षण:</strong> हवा महल, आमेर का किला, सिटी पैलेस, जंतर मंतर और नाहरगढ़ किला।
-                    </div>
-                </div>
-            </div>
-
-            <!-- 3. Kerala -->
-            <div class="place-card">
-                <div class="place-img" style="background-image: url('https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=800&auto=format&fit=crop');"></div>
-                <div class="place-content">
-                    <h3>3. केरल - ईश्वर का अपना देश (Kerala)</h3>
-                    <div class="place-location">स्थान: दक्षिण भारत</div>
-                    <p>केरल को अपनी प्राकृतिक सुंदरता के कारण 'God's Own Country' कहा जाता है। यह स्थान अपने शांत बैकवाटर्स (Backwaters), हाउसबोट की सवारी, नारियल के पेड़ों से घिरे समुद्र तटों और आयुर्वेदिक रिसॉर्ट्स के लिए प्रसिद्ध है। मुन्नार के हरे-भरे चाय के बागान और एलेप्पी के पानी के रास्ते प्रकृति प्रेमियों के लिए स्वर्ग के समान हैं।</p>
-                    <div class="key-attractions">
-                        <strong>मुख्य आकर्षण:</strong> एलेप्पी हाउसबोट, मुन्नार हिल स्टेशन, वायनाड और कोवलम बीच।
-                    </div>
-                </div>
-            </div>
-
-            <!-- 4. Varanasi -->
-            <div class="place-card">
-                <div class="place-img" style="background-image: url('https://images.unsplash.com/photo-1561361531-9952a7879db5?q=80&w=800&auto=format&fit=crop');"></div>
-                <div class="place-content">
-                    <h3>4. वाराणसी - बनारस (Varanasi)</h3>
-                    <div class="place-location">स्थान: उत्तर प्रदेश</div>
-                    <p>वाराणसी दुनिया के सबसे पुराने जीवित शहरों में से एक है और इसे भारत की आध्यात्मिक राजधानी कहा जाता है। गंगा नदी के तट पर स्थित यह शहर अपने पवित्र घाटों, मंदिरों और संकरी गलियों के लिए जाना जाता है। शाम को दशाश्वमेध घाट पर होने वाली भव्य 'गंगा आरती' एक ऐसा अनुभव है जिसे जीवन में कभी भुलाया नहीं जा सकता। यहाँ लोग मोक्ष और आत्मिक शांति की तलाश में आते हैं।</p>
-                    <div class="key-attractions">
-                        <strong>मुख्य आकर्षण:</strong> काशी विश्वनाथ मंदिर, गंगा आरती, अस्सी घाट और सारनाथ (बौद्ध स्थल)।
-                    </div>
-                </div>
-            </div>
-
-            <!-- 5. Goa -->
-            <div class="place-card">
-                <div class="place-img" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=800&auto=format&fit=crop');"></div>
-                <div class="place-content">
-                    <h3>5. गोवा - समुद्र तट और नाइटलाइफ़ (Goa)</h3>
-                    <div class="place-location">स्थान: पश्चिमी तट, भारत</div>
-                    <p>यदि आप मौज-मस्ती, समुद्र तट और बेहतरीन नाइटलाइफ़ के शौकीन हैं, तो गोवा आपके लिए सबसे बेहतरीन जगह है। यहाँ के खूबसूरत बीचेस, वाटर स्पोर्ट्स, पुराने पुर्तगाली चर्च और नाइट क्लब युवाओं के बीच काफी लोकप्रिय हैं। उत्तरी गोवा जहाँ अपनी पार्टियों के लिए जाना जाता है, वहीं दक्षिणी गोवा अपने शांत और साफ-सुथरे समुद्र तटों के लिए मशहूर है।</p>
-                    <div class="key-attractions">
-                        <strong>मुख्य आकर्षण:</strong> बागा बीच, कलंगुट बीच, डूडसागर झरना और बेसिलीका ऑफ बॉम जीसस चर्च।
-                    </div>
-                </div>
-            </div>
-
-            <!-- 6. Ladakh -->
-            <div class="place-card">
-                <div class="place-img" style="background-image: url('https://images.unsplash.com/photo-1581791534721-e599347317c1?q=80&w=800&auto=format&fit=crop');"></div>
-                <div class="place-content">
-                    <h3>6. लद्दाख - ठंडा रेगिस्तान (Ladakh)</h3>
-                    <div class="place-location">स्थान: जम्मू-कश्मीर और लद्दाख क्षेत्र</div>
-                    <p>लद्दाख अपनी ऊँची बर्फीली चोटियों, नीली झीलों और अद्भुत शांत वातावरण के लिए जाना जाता है। इसे 'दर्रों की भूमि' भी कहा जाता है। यहाँ की पैंगोंग झील (Pangong Lake) का पानी मौसम के साथ अपना रंग बदलता है, जो पर्यटकों के आकर्षण का मुख्य केंद्र है। एडवेंचर के शौकीन लोगों के लिए बाइक राइडिंग और ट्रेकिंग के लिए यह भारत की सबसे पसंदीदा जगह है।</p>
-                    <div class="key-attractions">
-                        <strong>मुख्य आकर्षण:</strong> पैंगोंग त्सो झील, नुब्रा घाटी, चुंबकीय पहाड़ी (Magnetic Hill) और लेह पैलेस।
-                    </div>
-                </div>
-            </div>
-
-        </div>
+      <article class="card">
+        <div class="number">04</div>
+        <div class="label">INVESTOR EDUCATION</div>
+        <h3>Learn Before You Invest</h3>
+        <p>
+          Build your knowledge of financial products, risk,
+          diversification and responsible investing.
+        </p>
+        <a href="https://investor.sebi.gov.in/" target="_blank" rel="noopener noreferrer">
+          SEBI Investor Education ↗
+        </a>
+      </article>
     </div>
 
-    <footer>
-        <p>&copy; 2026 Knowledge Hub. सभी अधिकार सुरक्षित हैं।</p>
-    </footer>
+    <div class="notice">
+      Content note: This website currently provides original educational
+      descriptions and links to external official resources. It does not
+      yet display verified, automatically updated news articles.
+    </div>
+  </section>
+
+  <section id="sources" style="margin-top:55px">
+    <div class="eyebrow">Research Directory</div>
+    <h2 style="margin:12px 0">Trusted Information Sources</h2>
+    <p style="color:#667085;line-height:1.8;font-size:14px">
+      Use official publications and reliable reporting to verify dates,
+      announcements and financial information.
+    </p>
+    <div class="grid" style="margin-top:20px">
+      <article class="card">
+        <h3>National Stock Exchange</h3>
+        <p>Exchange announcements and market information.</p>
+        <a href="https://www.nseindia.com/" target="_blank" rel="noopener noreferrer">Visit website ↗</a>
+      </article>
+      <article class="card">
+        <h3>Reserve Bank of India</h3>
+        <p>Monetary policy, banking and economic publications.</p>
+        <a href="https://www.rbi.org.in/" target="_blank" rel="noopener noreferrer">Visit website ↗</a>
+      </article>
+      <article class="card">
+        <h3>SEBI</h3>
+        <p>Investor education, regulations and official notices.</p>
+        <a href="https://www.sebi.gov.in/" target="_blank" rel="noopener noreferrer">Visit website ↗</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="ai-section" id="assistant">
+    <div class="ai-info">
+      <div class="eyebrow">Interactive Learning</div>
+      <h2 style="margin-top:12px">Ask Sumit AI</h2>
+      <p>
+        Ask about financial concepts, accounting, business or market
+        terminology. This starter assistant uses a few built-in examples.
+        A real AI model can be connected later through a secure backend.
+      </p>
+    </div>
+
+    <div class="chat">
+      <div class="chat-title">✦ Sumit AI · Learning Assistant</div>
+      <div id="messages">
+        <div class="message bot">
+          Welcome! Ask me about the Nifty 50, GST, accounting
+          or basic financial concepts.
+        </div>
+      </div>
+      <form id="askForm">
+        <input id="question" maxlength="500"
+          placeholder="Type your question..." required>
+        <button type="submit">Ask</button>
+      </form>
+      <p class="small">
+        Demo version. Answers are limited and may not cover your question.
+        Not investment advice.
+      </p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="logo">SUMIT <span>DAGAR</span></div>
+  <p>
+    An independent educational project about markets, business and finance.
+    This website is not affiliated with any stock exchange, regulator or
+    financial news publisher.
+  </p>
+  <p>
+    <a href="https://www.nseindia.com/">NSE</a> ·
+    <a href="https://www.rbi.org.in/">RBI</a> ·
+    <a href="https://www.sebi.gov.in/">SEBI</a>
+  </p>
+  <p>© <span id="year"></span> Sumit Dagar</p>
+</footer>
+
+<script>
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+const form = document.getElementById("askForm");
+const input = document.getElementById("question");
+const messages = document.getElementById("messages");
+
+function addMessage(text, type) {
+  const item = document.createElement("div");
+  item.className = "message " + type;
+  item.textContent = text;
+  messages.appendChild(item);
+  messages.scrollTop = messages.scrollHeight;
+}
+
+function getAnswer(question) {
+  const q = question.toLowerCase();
+
+  if (q.includes("nifty") || q.includes("sensex")) {
+    return "Nifty 50 and Sensex are benchmark indices for the Indian equity market. Nifty 50 is associated with NSE, while Sensex is associated with BSE. Check the official exchange websites for current information.";
+  }
+
+  if (q.includes("gst")) {
+    return "GST stands for Goods and Services Tax. It is an indirect tax system in India. For current rates and rules, refer to official government resources.";
+  }
+
+  if (q.includes("balance sheet")) {
+    return "A balance sheet reports a business's assets, liabilities and equity at a particular date. The basic accounting equation is Assets = Liabilities + Equity.";
+  }
+
+  if (q.includes("accounting")) {
+    return "Accounting involves recording, classifying and summarising financial transactions. Its core statements include the income statement, balance sheet and cash flow statement.";
+  }
+
+  if (q.includes("inflation")) {
+    return "Inflation is a sustained increase in the general price level of goods and services. It can affect purchasing power, interest rates and business costs.";
+  }
+
+  return "This is a starter demo, not a connected AI model. For this question, please consult reliable official sources. A secure AI API integration is required to answer arbitrary questions.";
+}
+
+form.addEventListener("submit", function(event) {
+  event.preventDefault();
+  const question = input.value.trim();
+  if (!question) return;
+
+  addMessage(question, "user");
+  input.value = "";
+
+  setTimeout(function() {
+    addMessage(getAnswer(question), "bot");
+  }, 200);
+});
+</script>
 
 </body>
 </html>
